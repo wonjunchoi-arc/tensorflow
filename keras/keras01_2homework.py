@@ -15,3 +15,14 @@ x_pred = np.array([6])
 model =Sequential()
 model.add(Dense(1,input_dim=1))
 
+#3. 컴파일, 훈련
+model.compile(loss='mse', optimizer='adam')
+model.fit(x,y, epochs=2500, batch_size=1)
+
+#4. 평가, 예측
+loss = model.evaluate(x,y)
+print('loss', loss)
+
+result =model.predict(x_pred)
+print('6의 예측값', result)
+
